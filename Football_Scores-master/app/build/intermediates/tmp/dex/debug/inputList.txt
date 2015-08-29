@@ -1,0 +1,5 @@
+/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/classes/debug
+/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-3d710fa3bbb8acddbc66ea0d85e63045873345f6.jar
+/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-e971b233fc684464c1a0ae2b664d99aaf48582ff.jar
+/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/pre-dexed/debug/classes-8dc113fbbee207ef773474497a581ed126a5b5de.jar
+/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/pre-dexed/debug/classes-759b3e300b0494c78b5b373bb5856ae960b158b6.jar
