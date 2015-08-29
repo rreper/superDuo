@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/home/lab/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-a1d87b57e965363877e62b19e314800aa6a76589.jar" />
+    </item>
+    <item
+        jar="/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/home/lab/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/classes-adacc8909f3c120ecfd38232d12e366b477abfa9.jar" />
+    </item>
+    <item
+        jar="/home/lab/Downloads/alexandria/app/build/intermediates/jacoco/jacocoagent.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="05d4f9e6f36f58a60dc65a4b1af30ee76201a530">
+        <dex dex="/home/lab/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/jacocoagent-923aa28f304e765937cbd80ee3dc499c22d6ba8b.jar" />
+    </item>
+    <item
+        jar="/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/home/lab/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/classes-0b177c2a292d2f39df692999c1e012f0a589a9a5.jar" />
+    </item>
+    <item
+        jar="/home/lab/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/home/lab/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-e52e1ce28e3bb8ce2664f4e2b65f882c913a0d7c.jar" />
+    </item>
+
+</items>

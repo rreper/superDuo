@@ -1,0 +1,6 @@
+/Users/jayharman/Downloads/alexandria/app/build/intermediates/coverage-instrumented-classes/debug
+/Users/jayharman/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-3d710fa3bbb8acddbc66ea0d85e63045873345f6.jar
+/Users/jayharman/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-be7634db6cd3fb2135794a359e79fd0f84134de5.jar
+/Users/jayharman/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/jacocoagent-0a47c20fd06dfdfe5f9a01e97b97ad35a49198b3.jar
+/Users/jayharman/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/classes-b5c3249dea87137cddd5b7eacd56aace4303172b.jar
+/Users/jayharman/Downloads/alexandria/app/build/intermediates/pre-dexed/debug/classes-5b9d65cc5a79d6cb4036fdaff46c6ca047d6ad3b.jar
