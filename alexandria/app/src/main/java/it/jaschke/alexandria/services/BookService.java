@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -73,6 +74,10 @@ public class BookService extends IntentService {
     private void fetchBook(String ean) {
 
         if(ean.length()!=13){
+//            Toast.makeText(getApplicationContext(),"Bad ISBN number",Toast.LENGTH_SHORT).show();
+            Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
+            messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.not_found));
+            LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
             return;
         }
 
@@ -85,6 +90,10 @@ public class BookService extends IntentService {
         );
 
         if(bookEntry.getCount()>0){
+//            Toast.makeText(getApplicationContext(),"No books with that ISBN",Toast.LENGTH_SHORT).show();
+            Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
+            messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.not_found));
+            LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
             bookEntry.close();
             return;
         }
@@ -114,6 +123,10 @@ public class BookService extends IntentService {
             InputStream inputStream = urlConnection.getInputStream();
             StringBuffer buffer = new StringBuffer();
             if (inputStream == null) {
+//                Toast.makeText(getApplicationContext(),"No internet connection?",Toast.LENGTH_SHORT).show();
+                Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
+                messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.not_found));
+                LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
                 return;
             }
 
