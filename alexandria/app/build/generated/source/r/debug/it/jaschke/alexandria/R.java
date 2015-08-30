@@ -1479,11 +1479,14 @@ containing a value of this type.
         public static final int not_found=0x7f06001d;
         public static final int ok_button=0x7f06001e;
         public static final int pref_startScreen=0x7f06001f;
-        public static final int scan=0x7f060020;
-        public static final int scan_button=0x7f060021;
-        public static final int search=0x7f060022;
-        public static final int share_text=0x7f060023;
-        public static final int title_activity_settings=0x7f060024;
+        public static final int result_failed=0x7f060020;
+        public static final int result_failed_why=0x7f060021;
+        public static final int result_succeeded=0x7f060022;
+        public static final int scan=0x7f060023;
+        public static final int scan_button=0x7f060024;
+        public static final int search=0x7f060025;
+        public static final int share_text=0x7f060026;
+        public static final int title_activity_settings=0x7f060027;
     }
     public static final class style {
         /**  Customize your theme here. 

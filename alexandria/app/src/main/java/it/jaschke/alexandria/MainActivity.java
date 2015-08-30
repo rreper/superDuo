@@ -1,5 +1,6 @@
 package it.jaschke.alexandria;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -12,12 +13,14 @@ import android.support.v4.content.LocalBroadcastManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import it.jaschke.alexandria.api.Callback;
+import it.jaschke.alexandria.AddBook;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, Callback {
@@ -97,6 +100,36 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         actionBar.setTitle(title);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        Toast.makeText(getApplicationContext(), "Result", Toast.LENGTH_SHORT).show();
+        it.jaschke.alexandria.IntentResult result = it.jaschke.alexandria.IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+        if (result != null) {
+            String eanstr = result.getContents();
+            Log.d("onActivityResult", "ean str " + eanstr);
+            if (eanstr != null) {
+                Toast.makeText(getApplicationContext(), eanstr, Toast.LENGTH_SHORT).show();
+                if(eanstr.length()==10 && !eanstr.startsWith("978")){
+                    eanstr="978"+eanstr;
+                }
+                if(eanstr.length()<13){
+                    return;
+                }
+                AddBook.ean.setText(eanstr);
+            }
+        } else {
+            Toast.makeText(getApplicationContext(), "result is null", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showDialog(int title, CharSequence message) {
+        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.setPositiveButton(R.string.ok_button, null);
+        builder.show();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

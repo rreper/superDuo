@@ -195,6 +195,9 @@
     <string name="not_found">No Book found</string>
     <string name="ok_button">Next</string>
     <string name="pref_startScreen">Select Startscreen</string>
+    <string name="result_failed">\"Failed\"</string>
+    <string name="result_failed_why">\"Contents are null\"</string>
+    <string name="result_succeeded">\"Succeeded\"</string>
     <string name="scan">Scan/Add a Book</string>
     <string name="scan_button">Scan</string>
     <string name="search">Search</string>
