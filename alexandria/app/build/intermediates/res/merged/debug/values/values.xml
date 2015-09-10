@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/values/arrays.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/values/arrays.xml -->
     <eat-comment/>
     <string-array name="pref_start_options">
         <item>@string/books</item>
@@ -10,7 +10,7 @@
         <item>0</item>
         <item>1</item>
     </string-array>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -137,12 +137,12 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="head_line">24sp</dimen>
     <dimen name="navigation_drawer_width">240dp</dimen>
     <dimen name="small_fontsize">12sp</dimen>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -154,11 +154,11 @@
     <item name="split_action_bar" type="id"/>
     <item name="up" type="id"/>
     <integer name="abc_max_action_buttons">2</integer>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <integer name="ean_size">13</integer>
     <integer name="ean_width">8</integer>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
@@ -176,7 +176,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="about">About this App</string>
     <string name="about_text">This application gets book information from a Google API. All titles, cover images, and author information come from there.
@@ -192,6 +192,7 @@
     <string name="input_hint">Insert ISBN-13. Digits only.</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="no_internet">Internet Connection Problem?</string>
     <string name="not_found">No Book found</string>
     <string name="ok_button">Next</string>
     <string name="pref_startScreen">Select Startscreen</string>
@@ -203,12 +204,12 @@
     <string name="search">Search</string>
     <string name="share_text">A must read book: </string>
     <string name="title_activity_settings">Settings</string>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <!-- From: file:/home/lab/Downloads/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">
         <item name="android:textColor">?android:textColorPrimary</item>

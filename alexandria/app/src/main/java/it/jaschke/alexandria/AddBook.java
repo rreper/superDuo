@@ -72,7 +72,7 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
             public void afterTextChanged(Editable s) {
                 String ean = s.toString();
                 //catch isbn10 numbers
-                Toast.makeText(getActivity().getApplicationContext(), "EAN changed", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity().getApplicationContext(), "EAN changed", Toast.LENGTH_SHORT).show();
 
                 if (ean.length() == 10 && !ean.startsWith("978")) {
                     ean = "978" + ean;
@@ -82,6 +82,7 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                     return;
                 }
                 //Once we have an ISBN, start a book intent
+                Log.d("afterTextChanged","ean "+ean);
                 Intent bookIntent = new Intent(getActivity(), BookService.class);
                 bookIntent.putExtra(BookService.EAN, ean);
                 bookIntent.setAction(BookService.FETCH_BOOK);

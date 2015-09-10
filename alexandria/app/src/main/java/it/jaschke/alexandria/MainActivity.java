@@ -29,6 +29,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment navigationDrawerFragment;
+    private static Context appContext = null;
 
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
@@ -61,6 +62,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         // Set up the drawer.
         navigationDrawerFragment.setUp(R.id.navigation_drawer,
                     (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        appContext = getApplicationContext();
     }
 
     @Override
@@ -85,8 +88,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
         fragmentManager.beginTransaction()
                 .replace(R.id.container, nextFragment)
-                .addToBackStack((String) title)
+                .addToBackStack((String) Integer.toString(position))
                 .commit();
+
     }
 
     public void setTitle(int titleId) {
@@ -122,9 +126,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         }
     }
 
-    private void showDialog(int title, CharSequence message) {
-        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_SHORT).show();
-        AlertDialog.Builder builder = new AlertDialog.Builder(getApplicationContext());
+    private void showDialog(int title, String message) {
+        //Toast.makeText(MainActivity.this,message,Toast.LENGTH_SHORT).show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(title);
         builder.setMessage(message);
         builder.setPositiveButton(R.string.ok_button, null);
@@ -166,9 +170,27 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
     public void onItemSelected(String ean) {
         Bundle args = new Bundle();
         args.putString(BookDetail.EAN_KEY, ean);
+
+        // accomodate a return from the details page
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        Fragment nextFragment;
+
+        nextFragment = new ListOfBooks();
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, nextFragment)
+                .addToBackStack("List")
+                .commit();
+
+        // create the details and replace the list fragment
 
         BookDetail fragment = new BookDetail();
         fragment.setArguments(args);
@@ -177,6 +199,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         if(findViewById(R.id.right_container) != null){
             id = R.id.right_container;
         }
+
         getSupportFragmentManager().beginTransaction()
                 .replace(id, fragment)
                 .addToBackStack("Book Detail")
@@ -188,7 +211,8 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         @Override
         public void onReceive(Context context, Intent intent) {
             if(intent.getStringExtra(MESSAGE_KEY)!=null){
-                Toast.makeText(MainActivity.this, intent.getStringExtra(MESSAGE_KEY), Toast.LENGTH_LONG).show();
+                //Toast.makeText(MainActivity.this, intent.getStringExtra(MESSAGE_KEY), Toast.LENGTH_LONG).show();
+                showDialog(R.string.result_failed,intent.getStringExtra(MESSAGE_KEY));
             }
         }
     }

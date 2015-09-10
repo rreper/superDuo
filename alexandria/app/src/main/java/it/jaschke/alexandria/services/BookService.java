@@ -49,7 +49,10 @@ public class BookService extends IntentService {
             final String action = intent.getAction();
             if (FETCH_BOOK.equals(action)) {
                 final String ean = intent.getStringExtra(EAN);
-                fetchBook(ean);
+                if (ean != null)
+                    fetchBook(ean);
+                else
+                    Log.d("onHandleIntent","ean null");
             } else if (DELETE_BOOK.equals(action)) {
                 final String ean = intent.getStringExtra(EAN);
                 deleteBook(ean);
@@ -89,11 +92,9 @@ public class BookService extends IntentService {
                 null  // sort order
         );
 
+        Log.d("BookService","bookEntry count "+bookEntry.getCount());
+        //Toast.makeText(getApplicationContext(),"bookEntry count"+bookEntry.getCount(),Toast.LENGTH_SHORT).show();
         if(bookEntry.getCount()>0){
-//            Toast.makeText(getApplicationContext(),"No books with that ISBN",Toast.LENGTH_SHORT).show();
-            Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
-            messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.not_found));
-            LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
             bookEntry.close();
             return;
         }
@@ -117,6 +118,12 @@ public class BookService extends IntentService {
             URL url = new URL(builtUri.toString());
 
             urlConnection = (HttpURLConnection) url.openConnection();
+            if (urlConnection == null) {
+                Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
+                messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.not_found));
+                LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
+                return;
+            }
             urlConnection.setRequestMethod("GET");
             urlConnection.connect();
 
@@ -124,6 +131,7 @@ public class BookService extends IntentService {
             StringBuffer buffer = new StringBuffer();
             if (inputStream == null) {
 //                Toast.makeText(getApplicationContext(),"No internet connection?",Toast.LENGTH_SHORT).show();
+                Log.d("BookService","inputStream is null");
                 Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
                 messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.not_found));
                 LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
@@ -138,14 +146,27 @@ public class BookService extends IntentService {
             }
 
             if (buffer.length() == 0) {
+                Log.d("BookService","Fetch return length 0");
                 return;
+            } else {
+                Log.d("BookService", "buffer "+buffer.toString());
             }
             bookJsonString = buffer.toString();
+
         } catch (Exception e) {
             Log.e(LOG_TAG, "Error ", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();
+            } else {
+                Log.d("BookService finally","urlConnection == null");
+            }
+            if (bookJsonString == null) {
+                Log.d("BookService","bookJsonString is null");
+                Intent messageIntent = new Intent(MainActivity.MESSAGE_EVENT);
+                messageIntent.putExtra(MainActivity.MESSAGE_KEY,getResources().getString(R.string.no_internet));
+                LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(messageIntent);
+                return;
             }
             if (reader != null) {
                 try {

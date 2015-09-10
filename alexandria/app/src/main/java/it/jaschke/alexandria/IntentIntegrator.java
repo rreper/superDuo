@@ -122,7 +122,8 @@ public class IntentIntegrator {
   private static final String BSPLUS_PACKAGE = "com.srowen.bs.android";
 
   // supported barcode formats
-  public static final Collection<String> PRODUCT_CODE_TYPES = list("UPC_A", "UPC_E", "EAN_8", "EAN_13", "RSS_14");
+//  public static final Collection<String> PRODUCT_CODE_TYPES = list("UPC_A", "UPC_E", "EAN_8", "EAN_13", "RSS_14");
+  public static final Collection<String> PRODUCT_CODE_TYPES = list("EAN_13");
   public static final Collection<String> ONE_D_CODE_TYPES =
       list("UPC_A", "UPC_E", "EAN_8", "EAN_13", "CODE_39", "CODE_93", "CODE_128",
            "ITF", "RSS_14", "RSS_EXPANDED");
@@ -254,10 +255,12 @@ public class IntentIntegrator {
    * @return the {@link AlertDialog} that was shown to the user prompting them to download the app
    *   if a prompt was needed, or null otherwise.
    */
-  public final AlertDialog initiateScan() {
-    return initiateScan(ALL_CODE_TYPES, -1);
-  }
-  
+
+    public final AlertDialog initiateScan() {
+        return initiateScan(PRODUCT_CODE_TYPES, -1);
+    }
+    //public final AlertDialog initiateScan() { return initiateScan(ALL_CODE_TYPES, -1);  }
+
   /**
    * Initiates a scan for all known barcode types with the specified camera.
    *

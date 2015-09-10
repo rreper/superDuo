@@ -13,4 +13,4 @@
         android:entryValues="@array/pref_start_values"
         />
 
-</PreferenceScreen><!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/xml/preferences.xml -->
+</PreferenceScreen><!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/xml/preferences.xml -->

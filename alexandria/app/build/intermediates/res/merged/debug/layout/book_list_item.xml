@@ -43,4 +43,4 @@
         android:layout_toEndOf="@+id/fullBookCover"/>
 
 
-</RelativeLayout><!-- From: file:/home/lab/Downloads/alexandria/app/src/main/res/layout/book_list_item.xml -->
+</RelativeLayout><!-- From: file:/home/work/AndroidstudioProjects/superDuo/alexandria/app/src/main/res/layout/book_list_item.xml -->
