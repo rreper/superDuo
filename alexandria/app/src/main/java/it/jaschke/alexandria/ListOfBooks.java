@@ -25,8 +25,10 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
     private ListView bookList = null;
     private int position = ListView.INVALID_POSITION;
     private EditText searchText = null;
+    private boolean clicked = false;
 
     private final int LOADER_ID = 10;
+    public String desired = null;
 
     public ListOfBooks() {
     }
@@ -71,10 +73,12 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
                 Cursor cursor = bookListAdapter.getCursor();
                 position = pos;
                 if (cursor != null && cursor.moveToPosition(position)) {
-                    Log.d("ListOfBooks.onItemClickListener","cursor.moveToPosition "+position+ " "+
-                            cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID)));
+                    if (clicked) { getFragmentManager().popBackStack(); }
+                    desired = cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID));
+                    Log.d("ListOfBooks.onItemClickListener","desired "+desired);
                     ((Callback)getActivity())
                             .onItemSelected(cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID)));
+                    clicked = true;
                 } else {
                     Log.d("ListOfBooks.onItemClickListener","cursor == null or cursor.moveToPosition error "+position);
                 }
@@ -82,7 +86,7 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
         });
 
 
-        getLoaderManager().initLoader(0,null,this);
+        //getLoaderManager().initLoader(0,null,this);
 
         position = 0;
 
@@ -120,6 +124,7 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
 
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        Log.d("ListOfBooks", "onCreateLoader");
 
         final String selection = AlexandriaContract.BookEntry.TITLE +" LIKE ? OR " + AlexandriaContract.BookEntry.SUBTITLE + " LIKE ? ";
         String searchString =searchText.getText().toString();
@@ -153,6 +158,7 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
         bookListAdapter.notifyDataSetChanged();
         if (position != ListView.INVALID_POSITION) {
             bookList.smoothScrollToPosition(position);
+            Log.d("onLoadFinished","position "+position);
         } else {
             Log.d("onLoadFinished","invalid position "+position);
             bookList.smoothScrollToPosition(0);

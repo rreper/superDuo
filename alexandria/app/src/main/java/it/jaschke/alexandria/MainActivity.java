@@ -179,14 +179,22 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         Bundle args = new Bundle();
         args.putString(BookDetail.EAN_KEY, ean);
 
+        Log.d("MainActivity","onItemSelected "+ean);
+
         // accomodate a return from the details page
         FragmentManager fragmentManager = getSupportFragmentManager();
         Fragment nextFragment;
 
         nextFragment = new ListOfBooks();
+        nextFragment.setArguments(args);
+
+        int id = R.id.container;
+        if(findViewById(R.id.right_container) != null){
+            id = R.id.right_container;
+        }
 
         fragmentManager.beginTransaction()
-                .replace(R.id.container, nextFragment)
+                .replace(id, nextFragment)
                 .addToBackStack("List")
                 .commit();
 
@@ -195,10 +203,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         BookDetail fragment = new BookDetail();
         fragment.setArguments(args);
 
-        int id = R.id.container;
-        if(findViewById(R.id.right_container) != null){
-            id = R.id.right_container;
-        }
 
         getSupportFragmentManager().beginTransaction()
                 .replace(id, fragment)
