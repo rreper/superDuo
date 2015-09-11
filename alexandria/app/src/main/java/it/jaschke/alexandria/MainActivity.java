@@ -1,11 +1,13 @@
 package it.jaschke.alexandria;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -40,6 +42,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     public static final String MESSAGE_EVENT = "MESSAGE_EVENT";
     public static final String MESSAGE_KEY = "MESSAGE_EXTRA";
+    public static int depth = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,25 +182,29 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         Bundle args = new Bundle();
         args.putString(BookDetail.EAN_KEY, ean);
 
-        Log.d("MainActivity","onItemSelected "+ean);
-
-        // accomodate a return from the details page
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        Fragment nextFragment;
-
-        nextFragment = new ListOfBooks();
-        nextFragment.setArguments(args);
+        Log.d("MainActivity","onItemSelected "+ean+" depth "+depth);
 
         int id = R.id.container;
         if(findViewById(R.id.right_container) != null){
             id = R.id.right_container;
         }
 
-        fragmentManager.beginTransaction()
-                .replace(id, nextFragment)
-                .addToBackStack("List")
-                .commit();
+        //if (depth < 1) {
+            // accomodate a return from the details page
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            Fragment nextFragment;
 
+            nextFragment = new ListOfBooks();
+            nextFragment.setArguments(args);
+
+            fragmentManager.beginTransaction()
+                    .replace(id, nextFragment)
+                    .addToBackStack("List")
+                    .commit();
+
+            depth++;
+        Log.d("details","depth "+depth);
+        //}
         // create the details and replace the list fragment
 
         BookDetail fragment = new BookDetail();
@@ -233,11 +240,17 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public void onBackPressed() {
+        if (depth > 0) depth--;
         if(getSupportFragmentManager().getBackStackEntryCount()<2){
             finish();
         }
         super.onBackPressed();
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public Intent getParentActivityIntent() {
+        return super.getParentActivityIntent().addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    }
 
 }

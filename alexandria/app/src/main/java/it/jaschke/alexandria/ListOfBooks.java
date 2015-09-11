@@ -25,7 +25,7 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
     private ListView bookList = null;
     private int position = ListView.INVALID_POSITION;
     private EditText searchText = null;
-    private boolean clicked = false;
+    private int clicked = 0;
 
     private final int LOADER_ID = 10;
     public String desired = null;
@@ -40,6 +40,7 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        clicked = MainActivity.depth-1;
 
         Cursor cursor = getActivity().getContentResolver().query(
                 AlexandriaContract.BookEntry.CONTENT_URI,
@@ -48,7 +49,6 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
                 null, // values for "where" clause
                 null  // sort order
         );
-
 
         bookListAdapter = new BookListAdapter(getActivity(), cursor, 0);
 
@@ -73,12 +73,13 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
                 Cursor cursor = bookListAdapter.getCursor();
                 position = pos;
                 if (cursor != null && cursor.moveToPosition(position)) {
-                    if (clicked) { getFragmentManager().popBackStack(); }
-                    desired = cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID));
-                    Log.d("ListOfBooks.onItemClickListener","desired "+desired);
-                    ((Callback)getActivity())
-                            .onItemSelected(cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID)));
-                    clicked = true;
+                    //if (MainActivity.depth <= clicked) {
+                        desired = cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID));
+                        Log.d("ListOfBooks.onItemClickListener", "desired " + desired+" clicked "+clicked);
+                        ((Callback) getActivity())
+                                .onItemSelected(cursor.getString(cursor.getColumnIndex(AlexandriaContract.BookEntry._ID)));
+                    //}
+                    clicked = MainActivity.depth;
                 } else {
                     Log.d("ListOfBooks.onItemClickListener","cursor == null or cursor.moveToPosition error "+position);
                 }
