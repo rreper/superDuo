@@ -12,19 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import barqsoft.footballscores.service.myFetchService;
+
 
 /**
  * A placeholder fragment containing a simple view.
  */
+
 public class MainScreenFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor>
 {
     public scoresAdapter mAdapter;
     public static final int SCORES_LOADER = 0;
     private String[] fragmentdate = new String[1];
     private int last_selected_item = -1;
+    private Intent service_start = null;
 
     public MainScreenFragment()
     {
@@ -32,7 +34,8 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
 
     private void update_scores()
     {
-        Intent service_start = new Intent(getActivity(), myFetchService.class);
+        service_start = new Intent(getActivity(), myFetchService.class);
+        service_start.putExtra(MainActivity.EXTRA_MESSAGE,"start");
         getActivity().startService(service_start);
     }
     public void setFragmentDate(String date)

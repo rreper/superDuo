@@ -1,10 +1,15 @@
 package barqsoft.footballscores.service;
 
 import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -21,8 +26,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 import java.util.Vector;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import barqsoft.footballscores.DatabaseContract;
+import barqsoft.footballscores.MainActivity;
 import barqsoft.footballscores.R;
 
 /**
@@ -30,18 +40,55 @@ import barqsoft.footballscores.R;
  */
 public class myFetchService extends IntentService
 {
+    private static boolean serviceRunning = false;
+
+    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    ScheduledFuture updateHandle = null;
     public static final String LOG_TAG = "myFetchService";
+
     public myFetchService()
     {
         super("myFetchService");
     }
 
+    final Runnable update = new Runnable() {
+        public void run() {
+            Log.d("TAG", "New scores updated");
+            try {
+                getData("n2");
+                getData("p2");
+            }catch (Exception e) {
+                Log.e("TAG","error in executing: It will no longer be run!: "+e.getMessage());
+                e.printStackTrace();
+                serviceRunning = false;  // error - restart
+            }
+        }
+    };
+
+    void startPeriodicService() {
+        Log.d("StartPeriodicService","starting update");
+        updateHandle = scheduler.scheduleAtFixedRate(update,1, 60, TimeUnit.SECONDS);
+    }
+
     @Override
     protected void onHandleIntent(Intent intent)
     {
-        getData("n2");
-        getData("p2");
+        String action = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
+        Log.d("OnHandleIntent","data "+action);
+
+        if (action.equals("exit")) {
+            if (updateHandle != null) {
+                updateHandle.cancel(true);
+                updateHandle = null;
+                serviceRunning = false;
+            }
+            return;
+        }
+        if (serviceRunning == false) {
+            startPeriodicService();
+            serviceRunning = true;
+        }
         return;
     }
 
@@ -63,7 +110,7 @@ public class myFetchService extends IntentService
             URL fetch = new URL(fetch_build.toString());
             m_connection = (HttpURLConnection) fetch.openConnection();
             m_connection.setRequestMethod("GET");
-            m_connection.addRequestProperty("X-Auth-Token",getString(R.string.api_key));
+            m_connection.addRequestProperty("X-Auth-Token", getString(R.string.api_key));
             Log.d("myFetchService","getData using token "+getString(R.string.api_key));
             m_connection.connect();
 
@@ -266,7 +313,38 @@ public class myFetchService extends IntentService
             inserted_data = mContext.getContentResolver().bulkInsert(
                     DatabaseContract.BASE_CONTENT_URI,insert_data);
 
-            //Log.v(LOG_TAG,"Succesfully Inserted : " + String.valueOf(inserted_data));
+            Log.v(LOG_TAG,"Succesfully Inserted : " + String.valueOf(inserted_data));
+
+            // from Google docs
+            int mId=0;
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(this)
+                            .setSmallIcon(R.drawable.ic_launcher)
+                            .setContentTitle("Football Scores")
+                            .setContentText(Home+" "+Home_goals+" "+Away+" "+Away_goals);
+            // Creates an explicit intent for an Activity in your app
+            Intent resultIntent = new Intent(this, MainActivity.class);
+
+            // The stack builder object will contain an artificial back stack for the
+            // started Activity.
+            // This ensures that navigating backward from the Activity leads out of
+            // your application to the Home screen.
+            TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
+            // Adds the back stack for the Intent (but not the Intent itself)
+            stackBuilder.addParentStack(MainActivity.class);
+            // Adds the Intent that starts the Activity to the top of the stack
+            stackBuilder.addNextIntent(resultIntent);
+            PendingIntent resultPendingIntent =
+                    stackBuilder.getPendingIntent(
+                            0,
+                            PendingIntent.FLAG_UPDATE_CURRENT
+                    );
+            mBuilder.setContentIntent(resultPendingIntent);
+            NotificationManager mNotificationManager =
+                    (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+            // mId allows you to update the notification later on.
+            mNotificationManager.notify(mId, mBuilder.build());
+
         }
         catch (JSONException e)
         {

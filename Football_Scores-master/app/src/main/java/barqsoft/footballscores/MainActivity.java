@@ -1,19 +1,26 @@
 package barqsoft.footballscores;
 
 import android.app.AlertDialog;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import barqsoft.footballscores.service.myFetchService;
+
 public class MainActivity extends ActionBarActivity
 {
     public static int selected_match_id;
     public static int current_fragment = 2;
     public static String LOG_TAG = "MainActivity";
+    public static String EXTRA_MESSAGE = "EXTRA";
     private final String save_tag = "Save Test";
     private PagerFragment my_main;
     @Override
@@ -33,6 +40,13 @@ public class MainActivity extends ActionBarActivity
 
     }
 
+    @Override
+    public void onDestroy() {
+        Intent service_end = new Intent(getApplicationContext(), myFetchService.class);
+        service_end.putExtra(MainActivity.EXTRA_MESSAGE,"exit");
+        getApplicationContext().startService(service_end);
+        super.onDestroy();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -97,4 +111,5 @@ public class MainActivity extends ActionBarActivity
                     .apply();
         }
     }
+
 }
