@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -22,7 +22,7 @@
     <color name="background_floating_material_light">#ffeeeeee</color>
     <color name="background_material_dark">#ff303030</color>
     <color name="background_material_light">#ffeeeeee</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="blue01">#0099CC</color>
     <color name="blue02">#079DD0</color>
@@ -38,7 +38,7 @@
     <color name="blue12">#A8DFF4</color>
     <color name="blue13">#C5EAF8</color>
     <color name="blue14">#E2F4FB</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
@@ -52,7 +52,7 @@
     <color name="dim_foreground_disabled_material_light">#80323232</color>
     <color name="dim_foreground_material_dark">#ffbebebe</color>
     <color name="dim_foreground_material_light">#ff323232</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="green01">#669900</color>
     <color name="green02">#6DA000</color>
@@ -68,7 +68,7 @@
     <color name="green12">#D3E992</color>
     <color name="green13">#E2F0B6</color>
     <color name="green14">#F0F8DB</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
@@ -81,7 +81,7 @@
     <color name="material_blue_grey_950">#ff21272b</color>
     <color name="material_deep_teal_200">#ff80cbc4</color>
     <color name="material_deep_teal_500">#ff009688</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="orange01">#FF8A00</color>
     <color name="orange02">#FF9105</color>
@@ -97,7 +97,7 @@
     <color name="orange12">#FFE3A0</color>
     <color name="orange13">#FFECC0</color>
     <color name="orange14">#FFF6DF</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="primary_dark_material_dark">#ff000000</color>
     <color name="primary_dark_material_light">#ff757575</color>
@@ -107,7 +107,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="purple01">#9933CC</color>
     <color name="purple02">#A041D0</color>
@@ -137,7 +137,7 @@
     <color name="red12">#FFAFAF</color>
     <color name="red13">#FFCACA</color>
     <color name="red14">#FFE4E4</color>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <color name="ripple_material_dark">#40ffffff</color>
     <color name="ripple_material_light">#40000000</color>
@@ -170,12 +170,12 @@
     <declare-styleable name="Toolbar"><attr format="reference" name="titleTextAppearance"/><attr format="reference" name="subtitleTextAppearance"/><attr name="title"/><attr name="subtitle"/><attr name="android:gravity"/><attr format="dimension" name="titleMargins"/><attr format="dimension" name="titleMarginStart"/><attr format="dimension" name="titleMarginEnd"/><attr format="dimension" name="titleMarginTop"/><attr format="dimension" name="titleMarginBottom"/><attr name="contentInsetStart"/><attr name="contentInsetEnd"/><attr name="contentInsetLeft"/><attr name="contentInsetRight"/><attr format="dimension" name="maxButtonHeight"/><attr format="reference" name="theme"/><attr format="reference" name="collapseIcon"/><attr format="string" name="collapseContentDescription"/><attr name="popupTheme"/><attr format="reference" name="navigationIcon"/><attr format="string" name="navigationContentDescription"/><attr name="android:minHeight"/></declare-styleable>
     <declare-styleable name="View"><attr format="dimension" name="paddingStart"/><attr format="dimension" name="paddingEnd"/><attr name="android:focusable"/></declare-styleable>
     <declare-styleable name="ViewStubCompat"><attr name="android:layout"/><attr name="android:inflatedId"/><attr name="android:id"/></declare-styleable>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="League">15sp</dimen>
     <dimen name="Score">30sp</dimen>
     <dimen name="TeamNames">17sp</dimen>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <dimen name="abc_action_bar_default_height_material">56dp</dimen>
     <dimen name="abc_action_bar_default_padding_material">4dp</dimen>
@@ -214,11 +214,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="dialog_fixed_height_major" type="dimen">80%</item>
     <item name="dialog_fixed_height_minor" type="dimen">100%</item>
@@ -226,11 +226,11 @@
     <item name="dialog_fixed_width_minor" type="dimen">320dp</item>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="list_horizonal_matgin">2dp</dimen>
     <dimen name="share_button_margin">150dp</dimen>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
     <item name="action_bar_spinner" type="id"/>
@@ -258,12 +258,13 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="about">About</string>
     <string name="about_text">
         This Application get Football Matches Score for the Premier League,Seria A,Bundesliga,Primera Division
         and the Uefa Champions League.
+
         All Matches data are acquired from football-data.org free API.
         All team Logos are acquired from http://hdlogo.wordpress.com/ upon requesting permission form the owner.
         The original version of this app was created by Yahia Khalid Ibn El Walid Ahmed, and a modified version is given to students in the Udacity Android Nanodegree program.
@@ -272,15 +273,22 @@
         During the off season, fake data will be added to the app.
     </string>
     <string name="action_settings">Settings</string>
-    <string name="api_key"/>
+    <string name="api_key">7f0c849b37c441128b4a45feacdac98a</string>
     <string name="app_name">Football Scores</string>
     <string name="bundesliga">Bundesliga</string>
     <string name="champions_league">UEFA Champions League</string>
     <string name="dummy_data">{\"timeFrameStart\":\"2015-06-18\",\"timeFrameEnd\":\"2015-06-19\",\"count\":1,\"fixtures\":[{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}},{\"_links\":{\"self\":{\"href\":\"http://api.football-data.org/alpha/fixtures/140514\"},\"soccerseason\":{\"href\":\"http://api.football-data.org/alpha/soccerseasons/357\"},\"homeTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/275\"},\"awayTeam\":{\"href\":\"http://api.football-data.org/alpha/teams/263\"}},\"date\":\"2015-06-19T22:00:00Z\",\"status\":\"FINISHED\",\"matchday\":42,\"homeTeamName\":\"TESTING1\",\"awayTeamName\":\"TESTING2\",\"result\":{\"goalsHomeTeam\":2,\"goalsAwayTeam\":4}}]}</string>
     <string name="final_text">Final</string>
     <string name="first_knockout_round">First knockout round</string>
+    <string name="first_run">
+        This Application gets Football Match Scores for the Premier League, Seria A, Bundesliga,
+        Primera Division and the Uefa Champions League. Swipe left or right for game day.
+        Up or Down for Games. Select the game for more options. Use Android Accessibility to change
+        the text size or enable other Accessibility Features.
+    </string>
     <string name="group_stage_text">Group stages</string>
     <string name="hello_world">Hello world!</string>
+    <string name="help_text"> Font sizes can be changed using Settings Menu -> Display-> Font size </string>
     <string name="matchday_text">Match day</string>
     <string name="premierleague">Premier League</string>
     <string name="primeradivison">Primera Division</string>
@@ -294,12 +302,12 @@
     <string name="tomorrow">Tomorrow</string>
     <string name="widget_text">This is a widget probably.</string>
     <string name="yesterday">Yesterday</string>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
     </style>
-    <!-- From: file:/Users/jayharman/Desktop/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <style name="Base.TextAppearance.AppCompat" parent="android:TextAppearance">
         <item name="android:textColor">?android:textColorPrimary</item>
@@ -1337,4 +1345,10 @@
     <style name="Widget.AppCompat.Spinner.DropDown.ActionBar" parent="Base.Widget.AppCompat.Spinner.DropDown.ActionBar"/>
     <style name="Widget.AppCompat.Toolbar" parent="Base.Widget.AppCompat.Toolbar"/>
     <style name="Widget.AppCompat.Toolbar.Button.Navigation" parent="Base.Widget.AppCompat.Toolbar.Button.Navigation"/>
+    <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="tabStripAppearance">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

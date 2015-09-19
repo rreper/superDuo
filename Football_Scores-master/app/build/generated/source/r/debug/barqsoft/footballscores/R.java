@@ -1547,21 +1547,23 @@ containing a value of this type.
         public static final int dummy_data=0x7f0a0017;
         public static final int final_text=0x7f0a0018;
         public static final int first_knockout_round=0x7f0a0019;
-        public static final int group_stage_text=0x7f0a001a;
-        public static final int hello_world=0x7f0a001b;
-        public static final int matchday_text=0x7f0a001c;
-        public static final int premierleague=0x7f0a001d;
-        public static final int primeradivison=0x7f0a001e;
-        public static final int quarter_final=0x7f0a001f;
-        public static final int semi_final=0x7f0a0020;
-        public static final int seriaa=0x7f0a0021;
-        public static final int share_text=0x7f0a0022;
-        public static final int test_text=0x7f0a0023;
-        public static final int title_activity_about=0x7f0a0024;
-        public static final int today=0x7f0a0025;
-        public static final int tomorrow=0x7f0a0026;
-        public static final int widget_text=0x7f0a0027;
-        public static final int yesterday=0x7f0a0028;
+        public static final int first_run=0x7f0a001a;
+        public static final int group_stage_text=0x7f0a001b;
+        public static final int hello_world=0x7f0a001c;
+        public static final int help_text=0x7f0a001d;
+        public static final int matchday_text=0x7f0a001e;
+        public static final int premierleague=0x7f0a001f;
+        public static final int primeradivison=0x7f0a0020;
+        public static final int quarter_final=0x7f0a0021;
+        public static final int semi_final=0x7f0a0022;
+        public static final int seriaa=0x7f0a0023;
+        public static final int share_text=0x7f0a0024;
+        public static final int test_text=0x7f0a0025;
+        public static final int title_activity_about=0x7f0a0026;
+        public static final int today=0x7f0a0027;
+        public static final int tomorrow=0x7f0a0028;
+        public static final int widget_text=0x7f0a0029;
+        public static final int yesterday=0x7f0a002a;
     }
     public static final class style {
         /**  Customize your theme here. 
@@ -1623,18 +1625,18 @@ containing a value of this type.
         public static final int Base_ThemeOverlay_AppCompat_Dark=0x7f0b0036;
         public static final int Base_ThemeOverlay_AppCompat_Dark_ActionBar=0x7f0b0037;
         public static final int Base_ThemeOverlay_AppCompat_Light=0x7f0b0038;
-        public static final int Base_V11_Theme_AppCompat=0x7f0b00e0;
-        public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0b00e1;
-        public static final int Base_V11_Theme_AppCompat_Light=0x7f0b00e2;
-        public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0b00e3;
-        public static final int Base_V14_Theme_AppCompat=0x7f0b00e4;
-        public static final int Base_V14_Theme_AppCompat_Dialog=0x7f0b00e5;
-        public static final int Base_V14_Theme_AppCompat_Light=0x7f0b00e6;
-        public static final int Base_V14_Theme_AppCompat_Light_Dialog=0x7f0b00e7;
-        public static final int Base_V21_Theme_AppCompat=0x7f0b00e8;
-        public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0b00e9;
-        public static final int Base_V21_Theme_AppCompat_Light=0x7f0b00ea;
-        public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0b00eb;
+        public static final int Base_V11_Theme_AppCompat=0x7f0b00e1;
+        public static final int Base_V11_Theme_AppCompat_Dialog=0x7f0b00e2;
+        public static final int Base_V11_Theme_AppCompat_Light=0x7f0b00e3;
+        public static final int Base_V11_Theme_AppCompat_Light_Dialog=0x7f0b00e4;
+        public static final int Base_V14_Theme_AppCompat=0x7f0b00e5;
+        public static final int Base_V14_Theme_AppCompat_Dialog=0x7f0b00e6;
+        public static final int Base_V14_Theme_AppCompat_Light=0x7f0b00e7;
+        public static final int Base_V14_Theme_AppCompat_Light_Dialog=0x7f0b00e8;
+        public static final int Base_V21_Theme_AppCompat=0x7f0b00e9;
+        public static final int Base_V21_Theme_AppCompat_Dialog=0x7f0b00ea;
+        public static final int Base_V21_Theme_AppCompat_Light=0x7f0b00eb;
+        public static final int Base_V21_Theme_AppCompat_Light_Dialog=0x7f0b00ec;
         public static final int Base_V7_Theme_AppCompat=0x7f0b0039;
         public static final int Base_V7_Theme_AppCompat_Dialog=0x7f0b003a;
         public static final int Base_V7_Theme_AppCompat_Light=0x7f0b003b;
@@ -1802,6 +1804,7 @@ containing a value of this type.
         public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b00dd;
         public static final int Widget_AppCompat_Toolbar=0x7f0b00de;
         public static final int Widget_AppCompat_Toolbar_Button_Navigation=0x7f0b00df;
+        public static final int tabStripAppearance=0x7f0b00e0;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

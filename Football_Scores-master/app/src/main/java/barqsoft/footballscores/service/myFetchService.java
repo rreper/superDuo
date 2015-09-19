@@ -64,6 +64,7 @@ public class myFetchService extends IntentService
             m_connection = (HttpURLConnection) fetch.openConnection();
             m_connection.setRequestMethod("GET");
             m_connection.addRequestProperty("X-Auth-Token",getString(R.string.api_key));
+            Log.d("myFetchService","getData using token "+getString(R.string.api_key));
             m_connection.connect();
 
             // Read the input stream into a String

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import barqsoft.footballscores.service.myFetchService;
 
@@ -59,6 +60,7 @@ public class MainScreenFragment extends Fragment implements LoaderManager.Loader
                 mAdapter.notifyDataSetChanged();
             }
         });
+
         return rootView;
     }
 

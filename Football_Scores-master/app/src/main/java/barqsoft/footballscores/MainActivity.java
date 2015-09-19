@@ -1,11 +1,13 @@
 package barqsoft.footballscores;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity
 {
@@ -24,7 +26,11 @@ public class MainActivity extends ActionBarActivity
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, my_main)
                     .commit();
+
         }
+
+        checkFirstRun();
+
     }
 
 
@@ -75,5 +81,20 @@ public class MainActivity extends ActionBarActivity
         selected_match_id = savedInstanceState.getInt("Selected_match");
         my_main = (PagerFragment) getSupportFragmentManager().getFragment(savedInstanceState,"my_main");
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    // borrowed from stackoverflow
+    public void checkFirstRun() {
+        boolean isFirstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE).getBoolean("isFirstRun", true);
+        if (isFirstRun){
+            // Place your dialog code here to display the dialog
+            new AlertDialog.Builder(this).setTitle("Welcome to Football Scores").
+                    setMessage(getString(R.string.first_run)).setNeutralButton("OK", null).show();
+
+            getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+                    .edit()
+                    .putBoolean("isFirstRun", false)
+                    .apply();
+        }
     }
 }
