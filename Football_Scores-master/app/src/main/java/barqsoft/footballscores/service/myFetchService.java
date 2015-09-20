@@ -67,7 +67,7 @@ public class myFetchService extends IntentService
 
     void startPeriodicService() {
         Log.d("StartPeriodicService","starting update");
-        updateHandle = scheduler.scheduleAtFixedRate(update,1, 60, TimeUnit.SECONDS);
+        updateHandle = scheduler.scheduleAtFixedRate(update,1, 600, TimeUnit.SECONDS); // 10 minutes
     }
 
     @Override
