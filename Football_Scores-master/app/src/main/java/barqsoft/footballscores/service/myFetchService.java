@@ -45,6 +45,7 @@ public class myFetchService extends IntentService
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     ScheduledFuture updateHandle = null;
     public static final String LOG_TAG = "myFetchService";
+    public static String latestScore = null;
 
     public myFetchService()
     {
@@ -67,7 +68,7 @@ public class myFetchService extends IntentService
 
     void startPeriodicService() {
         Log.d("StartPeriodicService","starting update");
-        updateHandle = scheduler.scheduleAtFixedRate(update,1, 600, TimeUnit.SECONDS); // 10 minutes
+        updateHandle = scheduler.scheduleAtFixedRate(update,1, 3600, TimeUnit.SECONDS); // 60 minutes
     }
 
     @Override
@@ -317,11 +318,12 @@ public class myFetchService extends IntentService
 
             // from Google docs
             int mId=0;
+            latestScore = Home+" "+Home_goals+" "+Away+" "+Away_goals;
             NotificationCompat.Builder mBuilder =
                     new NotificationCompat.Builder(this)
                             .setSmallIcon(R.drawable.ic_launcher)
                             .setContentTitle("Football Scores")
-                            .setContentText(Home+" "+Home_goals+" "+Away+" "+Away_goals);
+                            .setContentText(latestScore);
             // Creates an explicit intent for an Activity in your app
             Intent resultIntent = new Intent(this, MainActivity.class);
 

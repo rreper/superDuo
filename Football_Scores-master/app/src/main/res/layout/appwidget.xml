@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="@dimen/widget_margin">
+
+<LinearLayout
+    android:id="@+id/widget"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/appwidgetbackground"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/footballTitle"
+        android:id="@+id/textView2"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:textColor="#ffffffff"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Football"
+        android:id="@+id/textView"
+        android:hint="Get Scores"
+        android:textColor="#ffffffff"
+        android:singleLine="true"
+        android:textSize="@dimen/abc_text_size_medium_material"
+        android:gravity="center_vertical|center_horizontal" />
+
+</LinearLayout>
+
+</FrameLayout>

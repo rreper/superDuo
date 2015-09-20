@@ -230,6 +230,7 @@
     <eat-comment/>
     <dimen name="list_horizonal_matgin">2dp</dimen>
     <dimen name="share_button_margin">150dp</dimen>
+    <dimen name="widget_margin">8dp</dimen>
     <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
     <eat-comment/>
     <item name="action_bar_activity_content" type="id"/>
@@ -286,6 +287,7 @@
         Up or Down for Games. Select the game for more options. Use Android Accessibility to change
         the text size or enable other Accessibility Features.
     </string>
+    <string name="footballTitle">Football Scores</string>
     <string name="group_stage_text">Group stages</string>
     <string name="hello_world">Hello world!</string>
     <string name="help_text"> Font sizes can be changed using Settings Menu -> Display-> Font size </string>

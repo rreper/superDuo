@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity
     public static String EXTRA_MESSAGE = "EXTRA";
     private final String save_tag = "Save Test";
     private PagerFragment my_main;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
