@@ -7,6 +7,7 @@ import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import barqsoft.footballscores.service.myFetchService;
@@ -34,6 +35,7 @@ public class FootballAppWidgetProvider extends AppWidgetProvider {
             else
                 scores = "Launch Scores";
             views.setTextViewText(R.id.textView, scores);
+            Log.d("FootballWidget",scores);
 
             // Create an Intent to launch MainActivity
             Intent launchIntent = new Intent(context, MainActivity.class);

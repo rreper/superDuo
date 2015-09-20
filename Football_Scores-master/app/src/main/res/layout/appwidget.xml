@@ -17,6 +17,7 @@ android:padding="@dimen/widget_margin">
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/footballTitle"
+        android:contentDescription="@string/footballTitle"
         android:id="@+id/textView2"
         android:textSize="@dimen/abc_text_size_medium_material"
         android:textColor="#ffffffff"
