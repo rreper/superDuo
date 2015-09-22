@@ -355,8 +355,8 @@ int dimen dialog_fixed_width_major 0x7f08002c
 int dimen dialog_fixed_width_minor 0x7f08002d
 int dimen disabled_alpha_material_dark 0x7f08002e
 int dimen disabled_alpha_material_light 0x7f08002f
-int dimen list_horizonal_matgin 0x7f080030
-int dimen list_horizontal_margin 0x7f080033
+int dimen list_horizonal_matgin 0x7f080033
+int dimen list_horizontal_margin 0x7f080030
 int dimen share_button_margin 0x7f080031
 int dimen widget_margin 0x7f080032
 int drawable abc_ab_share_pack_holo_dark 0x7f020000

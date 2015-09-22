@@ -1319,8 +1319,8 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f08002d;
         public static final int disabled_alpha_material_dark=0x7f08002e;
         public static final int disabled_alpha_material_light=0x7f08002f;
-        public static final int list_horizonal_matgin=0x7f080030;
-        public static final int list_horizontal_margin=0x7f080033;
+        public static final int list_horizonal_matgin=0x7f080033;
+        public static final int list_horizontal_margin=0x7f080030;
         public static final int share_button_margin=0x7f080031;
         public static final int widget_margin=0x7f080032;
     }

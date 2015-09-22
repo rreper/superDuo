@@ -228,7 +228,7 @@
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
     <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
-    <dimen name="list_horizonal_matgin">2dp</dimen>
+    <dimen name="list_horizontal_margin">2dp</dimen>
     <dimen name="share_button_margin">150dp</dimen>
     <dimen name="widget_margin">8dp</dimen>
     <!-- From: file:/home/work/AndroidstudioProjects/superDuo/Football_Scores-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/res/values/values.xml -->
