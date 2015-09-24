@@ -36,9 +36,10 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
     private final String EAN_CONTENT="eanContent";
     private static final String SCAN_FORMAT = "scanFormat";
     private static final String SCAN_CONTENTS = "scanContents";
-
+    private final String BUTTONS_VISIBLE="Buttons Visible";
     private String mScanFormat = "Format:";
     private String mScanContents = "Contents:";
+    public static boolean buttonsVisible = false;
 
     public AddBook(){
     }
@@ -48,6 +49,7 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
         super.onSaveInstanceState(outState);
         if(ean!=null) {
             outState.putString(EAN_CONTENT, ean.getText().toString());
+            outState.putBoolean(BUTTONS_VISIBLE, buttonsVisible);
         }
     }
 
@@ -103,6 +105,7 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
 
                 it.jaschke.alexandria.IntentIntegrator integrator = new it.jaschke.alexandria.IntentIntegrator(getActivity());
                 integrator.initiateScan();
+                buttonsVisible=true;
             }
         });
 
@@ -110,6 +113,10 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
             @Override
             public void onClick(View view) {
                 ean.setText("");
+                clearFields();
+                rootView.findViewById(R.id.save_button).setVisibility(View.GONE);
+                rootView.findViewById(R.id.delete_button).setVisibility(View.GONE);
+                buttonsVisible=false;
             }
         });
 
@@ -121,13 +128,26 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
                 bookIntent.setAction(BookService.DELETE_BOOK);
                 getActivity().startService(bookIntent);
                 ean.setText("");
+                clearFields();
+                rootView.findViewById(R.id.save_button).setVisibility(View.GONE);
+                rootView.findViewById(R.id.delete_button).setVisibility(View.GONE);
+                buttonsVisible=false;
             }
         });
 
         if (savedInstanceState != null) {
             ean.setText(savedInstanceState.getString(EAN_CONTENT));
             ean.setHint("");
+            buttonsVisible=savedInstanceState.getBoolean(BUTTONS_VISIBLE);
         }
+
+        if (buttonsVisible) {
+            rootView.findViewById(R.id.save_button).setVisibility(View.VISIBLE);
+            rootView.findViewById(R.id.delete_button).setVisibility(View.VISIBLE);
+            Log.d("load finished", "setting save and delete visible");
+        }
+
+        getActivity().setTitle(R.string.scan);
 
         return rootView;
     }
@@ -185,8 +205,11 @@ public class AddBook extends Fragment implements LoaderManager.LoaderCallbacks<C
         String categories = data.getString(data.getColumnIndex(AlexandriaContract.CategoryEntry.CATEGORY));
         ((TextView) rootView.findViewById(R.id.categories)).setText(categories);
 
-        rootView.findViewById(R.id.save_button).setVisibility(View.VISIBLE);
-        rootView.findViewById(R.id.delete_button).setVisibility(View.VISIBLE);
+        if (buttonsVisible) {
+            rootView.findViewById(R.id.save_button).setVisibility(View.VISIBLE);
+            rootView.findViewById(R.id.delete_button).setVisibility(View.VISIBLE);
+            Log.d("load finished", "setting save and delete visible");
+        }
     }
 
     @Override

@@ -1555,23 +1555,25 @@ containing a value of this type.
         public static final int final_text=0x7f0b0018;
         public static final int first_knockout_round=0x7f0b0019;
         public static final int first_run=0x7f0b001a;
-        public static final int footballTitle=0x7f0b001b;
-        public static final int group_stage_text=0x7f0b001c;
-        public static final int hello_world=0x7f0b001d;
-        public static final int help_text=0x7f0b001e;
-        public static final int matchday_text=0x7f0b001f;
-        public static final int premierleague=0x7f0b0020;
-        public static final int primeradivison=0x7f0b0021;
-        public static final int quarter_final=0x7f0b0022;
-        public static final int semi_final=0x7f0b0023;
-        public static final int seriaa=0x7f0b0024;
-        public static final int share_text=0x7f0b0025;
-        public static final int test_text=0x7f0b0026;
-        public static final int title_activity_about=0x7f0b0027;
-        public static final int today=0x7f0b0028;
-        public static final int tomorrow=0x7f0b0029;
-        public static final int widget_text=0x7f0b002a;
-        public static final int yesterday=0x7f0b002b;
+        public static final int football=0x7f0b001b;
+        public static final int footballTitle=0x7f0b001c;
+        public static final int getScores=0x7f0b001d;
+        public static final int group_stage_text=0x7f0b001e;
+        public static final int hello_world=0x7f0b001f;
+        public static final int help_text=0x7f0b0020;
+        public static final int matchday_text=0x7f0b0021;
+        public static final int premierleague=0x7f0b0022;
+        public static final int primeradivison=0x7f0b0023;
+        public static final int quarter_final=0x7f0b0024;
+        public static final int semi_final=0x7f0b0025;
+        public static final int seriaa=0x7f0b0026;
+        public static final int share_text=0x7f0b0027;
+        public static final int test_text=0x7f0b0028;
+        public static final int title_activity_about=0x7f0b0029;
+        public static final int today=0x7f0b002a;
+        public static final int tomorrow=0x7f0b002b;
+        public static final int widget_text=0x7f0b002c;
+        public static final int yesterday=0x7f0b002d;
     }
     public static final class style {
         /**  Customize your theme here. 

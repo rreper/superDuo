@@ -91,7 +91,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
         fragmentManager.beginTransaction()
                 .replace(R.id.container, nextFragment)
-                .addToBackStack((String) Integer.toString(position))
+                .addToBackStack((String) "Main")
                 .commit();
 
     }
@@ -110,23 +110,31 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         Toast.makeText(getApplicationContext(), "Result", Toast.LENGTH_SHORT).show();
-        it.jaschke.alexandria.IntentResult result = it.jaschke.alexandria.IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
-        if (result != null) {
-            String eanstr = result.getContents();
-            Log.d("onActivityResult", "ean str " + eanstr);
-            if (eanstr != null) {
-                Toast.makeText(getApplicationContext(), eanstr, Toast.LENGTH_SHORT).show();
-                if(eanstr.length()==10 && !eanstr.startsWith("978")){
-                    eanstr="978"+eanstr;
+        try {
+            it.jaschke.alexandria.IntentResult result = it.jaschke.alexandria.IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
+            if (result != null) {
+                String eanstr = result.getContents();
+                Log.d("onActivityResult", "ean str " + eanstr);
+                if (eanstr != null) {
+                    Toast.makeText(getApplicationContext(), eanstr, Toast.LENGTH_SHORT).show();
+                    if (eanstr.length() == 10 && !eanstr.startsWith("978")) {
+                        eanstr = "978" + eanstr;
+                    }
+                    if (eanstr.length() < 13) {
+                        return;
+                    }
+                    AddBook.ean.setText(eanstr);
                 }
-                if(eanstr.length()<13){
-                    return;
-                }
-                AddBook.ean.setText(eanstr);
+            } else {
+                Toast.makeText(getApplicationContext(), "result is null", Toast.LENGTH_SHORT).show();
+                AddBook.buttonsVisible = false;
             }
-        } else {
+        } catch (Exception e) {
+            e.printStackTrace();
             Toast.makeText(getApplicationContext(), "result is null", Toast.LENGTH_SHORT).show();
+            AddBook.buttonsVisible = false;
         }
+
     }
 
     private void showDialog(int title, String message) {
@@ -195,11 +203,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             Fragment nextFragment;
 
             nextFragment = new ListOfBooks();
-            nextFragment.setArguments(args);
-
             fragmentManager.beginTransaction()
-                    .replace(id, nextFragment)
-                    .addToBackStack("List")
+                    .replace(R.id.container, nextFragment)
+                    //.addToBackStack("List")
                     .commit();
 
             depth++;
@@ -241,10 +247,11 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     @Override
     public void onBackPressed() {
         if (depth > 0) depth--;
-        if(getSupportFragmentManager().getBackStackEntryCount()<2){
+        if(getSupportFragmentManager().getBackStackEntryCount()<1){  // was 2
             finish();
         }
         super.onBackPressed();
+        restoreActionBar();
     }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN)

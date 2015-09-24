@@ -287,7 +287,9 @@
         Up or Down for Games. Select the game for more options. Use Android Accessibility to change
         the text size or enable other Accessibility Features.
     </string>
+    <string name="football">Football</string>
     <string name="footballTitle">Football Scores</string>
+    <string name="getScores">Get Scores</string>
     <string name="group_stage_text">Group stages</string>
     <string name="hello_world">Hello world!</string>
     <string name="help_text"> Font sizes can be changed using Settings Menu -> Display-> Font size </string>

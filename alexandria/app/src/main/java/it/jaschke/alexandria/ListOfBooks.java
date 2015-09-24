@@ -86,6 +86,7 @@ public class ListOfBooks extends Fragment implements LoaderManager.LoaderCallbac
             }
         });
 
+        getActivity().setTitle(R.string.books);
 
         //getLoaderManager().initLoader(0,null,this);
 

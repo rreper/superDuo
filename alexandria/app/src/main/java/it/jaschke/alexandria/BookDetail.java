@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.widget.ShareActionProvider;
 import android.util.Log;
 import android.util.Patterns;
@@ -27,9 +29,9 @@ public class BookDetail extends Fragment implements LoaderManager.LoaderCallback
 
     public static final String EAN_KEY = "EAN";
     private final int LOADER_ID = 10;
-    private View rootView;
+    private static View rootView= null;
     private String ean = null;
-    private String bookTitle;
+    private String bookTitle =null;
     private ShareActionProvider shareActionProvider = null;
 
     public BookDetail(){
@@ -66,6 +68,8 @@ public class BookDetail extends Fragment implements LoaderManager.LoaderCallback
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
+
+        getActivity().setTitle(R.string.books);
 
         return rootView;
     }
